@@ -53,13 +53,13 @@ pipeline {
 
         stage('Trivy security scan') {
             steps {
-                sh "trivy image --severity CRITICAL,HIGH --format table ${IMAGE_NAME}:latest"
+                sh "trivy image --timeout 15m --severity CRITICAL,HIGH --format table ${IMAGE_NAME}:latest"
             }
         }
 
         stage('Generate SBOM') {
             steps {
-                sh "trivy image --format spdx-json --output sbom-spdx.json ${IMAGE_NAME}:latest"
+                sh "trivy image --timeout 15m --format spdx-json --output sbom-spdx.json ${IMAGE_NAME}:latest"
             }
         }
 
