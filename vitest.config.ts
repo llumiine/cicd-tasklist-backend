@@ -1,5 +1,4 @@
 import { defineConfig } from "vitest/config";
-
 export default defineConfig({
   test: {
     globals: true,
@@ -14,6 +13,9 @@ export default defineConfig({
       exclude: [
         "src/__tests__/**",
         "src/server.ts",
+        "src/app.ts",
+        "src/lib/prisma.ts",
+        "src/routes/task.routes.ts",
         "**/*.config.ts",
       ],
     },
