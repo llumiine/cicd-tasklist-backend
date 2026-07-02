@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-laam')
-        SONAR_TOKEN = credentials('sonarqube-token-laam')
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+        SONAR_TOKEN = credentials('sonarqube-token')
         SONAR_HOST_URL = 'https://sonarqube.cicd.kits.ext.educentre.fr'
         IMAGE_NAME = 'llumine/tasklist-backend'
     }
